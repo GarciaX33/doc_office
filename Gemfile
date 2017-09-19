@@ -1,6 +1,7 @@
-source 'https://rubygems.org/'
+source ('https://rubygems.org/')
 
-require 'pry'
-require 'rspec'
-require 'pg'
-require 'capybara'
+gem ('rspec')
+gem ('pg')
+gem ('capybara')
+gem ('sinatra')
+gem ('sinatra-contrib')

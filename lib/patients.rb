@@ -6,6 +6,7 @@ class Patient
     @id = attrs[:id]
     @name = attrs[:name]
     @birthdate = attrs[:birthdate]
+    @doctor_id
   end
 
   def save
@@ -24,8 +25,7 @@ class Patient
 
 ################################
 
-class << self
-  def all
+  def self.all
     DB.exec("Select * FROM patients;").map do |patients|
       Patient.new({
         :id => patient["id"],

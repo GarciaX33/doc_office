@@ -1,6 +1,6 @@
 require 'rspec'
-require 'doctors'
-require 'spec_helper'
+require 'doctor'
+# require 'spec_helper'
 
 describe Doctor  do
   before :each  do
@@ -14,7 +14,7 @@ describe Doctor  do
       :speciality => 'Pediatrician'
       })
 
-    @Dave = Person.new({
+    @Dave = Doctor.new({
       :name => "Dave",
       :speciality => 'Surgeon'
     })
@@ -35,18 +35,27 @@ describe Doctor  do
    end
  end
 
+#   describe("#save") do
+#   it("lets you save input to the database") do
+#     doctor = Doctor.new({:name => "Ted", :id => nil})
+#     doctor.save()
+#     expect(Doctor.all).to eq [doctor]
+#   end
+# end
+#
+#   describe '.patient_list' do
+#     it "will give a patient list per each doctor" do
+#       @dave = Doctor.new({
+#         :id => '3',
+#         :name => "dave",
+#         :speciality => "surgeon"
+#         })
+#         @johnny.save
+#         @tommy.save
+#         @thomas.save
+#         @george.save
+#       expect(Doctor.patient_list(@dave)).to eq [@johnny, @thomas]
+#     end
+#   end
 
-describe '#save' do
-    it "will save input into the database" do
-      @name.save()
-      expect(Doctor.all).to be_an_instance_of(Array)
-    end
-
-    it "will update entries that already exist" do
-      @kevin.save
-      @kevin.save
-      person2_id = @kevin.id
-      expect(Person.all.first).to eq @kevin
-      expect(Person.all.first.id.to_i).to eq person2_id
-    end
-  end
+end
